@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="Marcus.css">
 </head>
 <body>
+
+
 <div class="container">
     <h1>Välkommen till ett Quiz om Värmland</h1>
 
+
     <form id="quizForm">
+
         <div class="section">
             <h2>Visitor Information</h2>
             <label for="firstName">Förnamn <span>*</span></label>
@@ -26,8 +30,10 @@
             <span class="error-message" id="emailError"></span>
         </div>
 
+        <!-- Quiz Questions Section -->
         <div class="section">
             <h2>Quiz Questions</h2>
+
 
             <div class="question">
                 <p>1. Vilket är Värmlands landskapsdjur? <span>*</span></p>
@@ -38,7 +44,7 @@
             </div>
 
             <div class="question">
-                <p>1. Vilken är Värmlands största stad? <span>*</span></p>
+                <p>2. Vilken är Värmlands största stad? <span>*</span></p>
                 <label><input type="radio" name="question2" value="Arvika"> Arvika</label>
                 <label><input type="radio" name="question2" value="Kristinehamn"> Kristinehamn</label>
                 <label><input type="radio" name="question2" value="Karlstad"> Karlstad</label>
@@ -49,14 +55,14 @@
             </div>
 
             <div class="question">
-                <p>2. Vilka författare är från Värmland?</p>
+                <p>3. Vilka författare är från Värmland?</p>
                 <label><input type="checkbox" name="question3" value="Selma Lagerlöf"> Selma Lagerlöf</label>
                 <label><input type="checkbox" name="question3" value="August Strindberg"> August Strindberg</label>
                 <label><input type="checkbox" name="question3" value="Gustaf Fröding"> Gustaf Fröding</label>
             </div>
 
             <div class="question">
-                <p>2. Vilka lag är från Värmland?</p>
+                <p>4. Vilka lag är från Värmland?</p>
                 <label><input type="checkbox" name="question4" value="Färjestad BK"> Färjestad BK</label>
                 <label><input type="checkbox" name="question4" value="Brynäs IF"> Brynäs IF</label>
                 <label><input type="checkbox" name="question4" value="Degerfors IF"> Degerfors IF</label>
@@ -65,18 +71,62 @@
             </div>
 
             <div class="question">
-                <p>3. Berätta vad du vet om värmland <span>*</span></p>
+                <p>5. Berätta vad du vet om Värmland <span>*</span></p>
                 <textarea id="question5" rows="4"></textarea>
                 <span class="error-message" id="question5Error"></span>
             </div>
         </div>
 
-
         <button type="button" id="submitButton">Submit</button>
         <p class="success-message" id="successMessage"></p>
     </form>
-</div>
 
+    <!-- Custom Quiz Creation Section -->
+    <div class="custom-quiz-section">
+        <h2>Skapa ditt egna Quiz</h2>
+
+        <div>
+            <label for="customQuestionText">Ange frågetext:</label>
+            <input type="text" id="customQuestionText">
+        </div>
+
+        <div>
+            <p>Select Answer Type:</p>
+            <label><input type="radio" name="answerType" value="radio" checked> Single Choice</label>
+            <label><input type="radio" name="answerType" value="checkbox"> Multiple Choice</label>
+            <label><input type="radio" name="answerType" value="text"> Text Answer</label>
+        </div>
+
+        <div id="customOptionsSection">
+            <p>Ange möjliga svar (för valbaserade frågor):</p>
+            <input type="text" class="customOptionInput" placeholder="Option 1">
+            <input type="text" class="customOptionInput" placeholder="Option 2">
+            <input type="text" class="customOptionInput" placeholder="Option 3">
+            <p>Mark the correct answers by clicking the checkboxes:</p>
+            <input type="checkbox" class="correctAnswerCheckbox"> Rätt svar
+            <input type="checkbox" class="correctAnswerCheckbox"> Rätt svar
+            <input type="checkbox" class="correctAnswerCheckbox"> Rätt svar
+        </div>
+
+
+        <div id="customTextAnswerSection" style="display: none;">
+            <label for="customTextAnswer"> Ange rätt svar (för textfrågor):</label>
+            <input type="text" id="customTextAnswer">
+        </div>
+
+        <button type="button" id="addQuestionBtn">Lägg till fråga</button>
+        <button type="button" id="saveQuizBtn">Spara Quiz</button>
+    </div>
+
+
+    <div class="custom-quiz-display">
+        <h2>Svara på ditt Custom Quiz</h2>
+        <button type="button" id="loadQuizBtn">Ladda ditt Custom Quiz</button>
+        <div id="customQuizContainer"></div>
+        <button type="button" id="submitCustomQuizBtn">Lämna in dina svar</button>
+        <p class="success-message" id="customQuizSuccessMessage" style="display:none;">Dina svar har sparats!!</p>
+    </div>
+</div>
 <script src="Marcus.js"></script>
 </body>
 </html>

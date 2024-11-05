@@ -2,9 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="Marcus.css">
 </head>
 <body>
+<div class="container">
+    <h1>Välkommen till ett Quiz om Värmland</h1>
 
+    <form id="quizForm">
+        <div class="section">
+            <h2>Visitor Information</h2>
+            <label for="firstName">Förnamn <span>*</span></label>
+            <input type="text" id="firstName" required>
+            <span class="error-message" id="firstNameError"></span>
+
+            <label for="lastName">Efternamn <span>*</span></label>
+            <input type="text" id="lastName" required>
+            <span class="error-message" id="lastNameError"></span>
+
+            <label for="email">Email <span>*</span></label>
+            <input type="email" id="email" required>
+            <span class="error-message" id="emailError"></span>
+        </div>
+
+        <div class="section">
+            <h2>Quiz Questions</h2>
+
+            <div class="question">
+                <p>1. Vilket är Värmlands landskapsdjur? <span>*</span></p>
+                <label><input type="radio" name="question1" value="Björn"> Björn</label>
+                <label><input type="radio" name="question1" value="Älg"> Älg</label>
+                <label><input type="radio" name="question1" value="Varg"> Varg</label>
+                <span class="error-message" id="question1Error"></span>
+            </div>
+
+            <div class="question">
+                <p>1. Vilken är Värmlands största stad? <span>*</span></p>
+                <label><input type="radio" name="question2" value="Arvika"> Arvika</label>
+                <label><input type="radio" name="question2" value="Kristinehamn"> Kristinehamn</label>
+                <label><input type="radio" name="question2" value="Karlstad"> Karlstad</label>
+                <label><input type="radio" name="question2" value="Karlskoga"> Karlskoga</label>
+                <label><input type="radio" name="question2" value="Grums"> Grums</label>
+                <label><input type="radio" name="question2" value="Filipstad"> Filipstad</label>
+                <span class="error-message" id="question2Error"></span>
+            </div>
+
+            <div class="question">
+                <p>2. Vilka författare är från Värmland?</p>
+                <label><input type="checkbox" name="question3" value="Selma Lagerlöf"> Selma Lagerlöf</label>
+                <label><input type="checkbox" name="question3" value="August Strindberg"> August Strindberg</label>
+                <label><input type="checkbox" name="question3" value="Gustaf Fröding"> Gustaf Fröding</label>
+            </div>
+
+            <div class="question">
+                <p>2. Vilka lag är från Värmland?</p>
+                <label><input type="checkbox" name="question4" value="Färjestad BK"> Färjestad BK</label>
+                <label><input type="checkbox" name="question4" value="Brynäs IF"> Brynäs IF</label>
+                <label><input type="checkbox" name="question4" value="Degerfors IF"> Degerfors IF</label>
+                <label><input type="checkbox" name="question4" value="AIK"> AIK</label>
+                <label><input type="checkbox" name="question4" value="Björklöven"> Björklöven</label>
+            </div>
+
+            <div class="question">
+                <p>3. Berätta vad du vet om värmland <span>*</span></p>
+                <textarea id="question5" rows="4"></textarea>
+                <span class="error-message" id="question5Error"></span>
+            </div>
+        </div>
+
+
+        <button type="button" id="submitButton">Submit</button>
+        <p class="success-message" id="successMessage"></p>
+    </form>
+</div>
+
+<script src="Marcus.js"></script>
 </body>
 </html>

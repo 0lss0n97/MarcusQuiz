@@ -1,7 +1,7 @@
-// Existing quiz functionality
+
 document.getElementById("submitButton").addEventListener("click", function () {
     let isValid = true;
-    let score = 0; // Initialize score
+    let score = 0;
     const totalQuestions = 5;
 
     // Correct answers configuration
@@ -13,7 +13,7 @@ document.getElementById("submitButton").addEventListener("click", function () {
         question5: "any text"
     };
 
-    // Reset previous error messages
+
     document.querySelectorAll(".error-message").forEach((msg) => msg.style.display = "none");
     document.getElementById("successMessage").style.display = "none";
 
@@ -22,7 +22,7 @@ document.getElementById("submitButton").addEventListener("click", function () {
     const lastName = document.getElementById("lastName").value.trim();
     const email = document.getElementById("email").value.trim();
 
-    // Validate first and last names, and email
+
     if (!firstName || !/^[A-Za-z]+$/.test(firstName)) {
         document.getElementById("firstNameError").textContent = "Please enter a valid first name (letters only).";
         document.getElementById("firstNameError").style.display = "block";
@@ -87,7 +87,7 @@ document.getElementById("addQuestionBtn").addEventListener("click", function () 
         correctAnswers: []
     };
 
-    // Capture options for multiple choice or radio button types
+
     if (answerType === "radio" || answerType === "checkbox") {
         document.querySelectorAll(".customOptionInput").forEach(input => {
             if (input.value) {
@@ -106,13 +106,13 @@ document.getElementById("addQuestionBtn").addEventListener("click", function () 
     alert("Question added to the custom quiz!");
 });
 
-// Save custom quiz to local storage
+
 document.getElementById("saveQuizBtn").addEventListener("click", function () {
     localStorage.setItem("customQuiz", JSON.stringify(customQuiz));
     alert("Custom quiz saved!");
 });
 
-// Load custom quiz from local storage and display it
+
 document.getElementById("loadQuizBtn").addEventListener("click", function () {
     const loadedQuiz = JSON.parse(localStorage.getItem("customQuiz"));
     if (!loadedQuiz) {
@@ -166,7 +166,7 @@ document.getElementById("loadQuizBtn").addEventListener("click", function () {
 document.getElementById("submitCustomQuizBtn").addEventListener("click", function() {
     const customQuizData = [];
 
-    // Retrieve all questions from the custom quiz container
+   
     const questions = document.querySelectorAll('.custom-quiz-question');
     questions.forEach(question => {
         const questionText = question.querySelector('.question-text').value;
@@ -185,14 +185,14 @@ document.getElementById("submitCustomQuizBtn").addEventListener("click", functio
         });
     });
 
-    // Store the quiz data in localStorage
+
     localStorage.setItem('customQuiz', JSON.stringify(customQuizData));
 
-    // Display success message
+
     const successMessage = document.getElementById("customQuizSuccessMessage");
     successMessage.style.display = "block";
 
-    // Optionally hide the success message after a few seconds
+
     setTimeout(() => {
         successMessage.style.display = "none";
     }, 5000); // Hide after 5 seconds

@@ -166,7 +166,7 @@ document.getElementById("loadQuizBtn").addEventListener("click", function () {
 document.getElementById("submitCustomQuizBtn").addEventListener("click", function() {
     const customQuizData = [];
 
-   
+
     const questions = document.querySelectorAll('.custom-quiz-question');
     questions.forEach(question => {
         const questionText = question.querySelector('.question-text').value;

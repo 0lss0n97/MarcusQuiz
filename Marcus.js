@@ -41,11 +41,10 @@ document.getElementById("submitButton").addEventListener("click", function () {
 
     // Validate quiz answers and calculate score
     const question1 = document.querySelector('input[name="question1"]:checked');
-    if (!question1) {
-        document.getElementById("question1Error").textContent = "Please select an answer for Question 1.";
-        document.getElementById("question1Error").style.display = "block";
-        isValid = false;
-    } else if (question1.value === correctAnswers.question1) score++;
+    // Requested change of the code
+    if (question1) {
+        if (question1.value === correctAnswers.question1) score++;
+    }
 
     const question2 = document.querySelector('input[name="question2"]:checked');
     if (!question2) {
